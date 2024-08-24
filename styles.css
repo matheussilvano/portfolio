@@ -196,6 +196,8 @@
         border-radius: 10px;
         padding: 20px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        font-size: 14px;
+        color: #333;
     }
 
     .project h3 {
@@ -204,11 +206,14 @@
         color: #38acff;
     }
 
-    .project p {
-        font-size: 16px;
-        color: #333;
+    .project li{
+      margin-left: 20px;
     }
-  
+
+    .project img{
+      max-width: 95%;
+    }
+
     #contato {
         background-color: #f4f4f4;
         padding: 80px 20px;
