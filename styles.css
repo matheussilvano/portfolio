@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+
+  body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* Impede o scroll manual */
+  }
+  
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 20px 10px
+  }
+
+  nav ul li a:hover{
+    color: #fff;
+    background-color: #38acff;
+  }
+  
+  section {
+  height: 100vh; /* Cada seção ocupa 100% da altura da tela */
+  scroll-snap-align: start; /* Ancoragem no início de cada seção */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+}
+
+  main {
+    scroll-snap-type: y mandatory; /* Snap vertical obrigatório */
+    overflow-y: scroll; /* Habilita o scroll automático */
+    scroll-behavior: smooth; /* Transição suave */
+    height: 100vh;
+  }
+
+  /* Centralizando o conteúdo da seção "Início" */
+  .content-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh; /* Deixa espaço para a palavra "scroll" */
+    text-align: center;
+  }
+  
+  /* Estilo e animação da palavra "scroll" */
+  .scroll-indicator {
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 1.5s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    40% {
+      transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+      transform: translateX(-50%) translateY(-5px);
+    }
+  }
+  
+  .wave-emoji {
+    display: inline-block;
+    animation: wave 2s infinite;
+    transform-origin: 70% 70%;
+    font-size: 1em;
+    margin-left: 10px;
+  }
+  
+  @keyframes wave {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(15deg); }
+    50% { transform: rotate(-10deg); }
+    75% { transform: rotate(15deg); }
+  }
+
+  .nome-branco {
+    color: #fff; /* Branco */
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+  }
+  
+  .nome-azul {
+    color: #38acff; /* Laranja */
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+  } 
+  
+  
+  .btn {
+    padding: 2px 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    opacity: 0.8;
+  }
+  
+  
+  #inicio {
+    background-color: #f4f4f4;
+    
+  }
+  
+  #sobre {
+    position: relative; /* Permite a posição absoluta do título dentro da seção */
+    padding: 20px; /* Ajuste conforme necessário */
+    height: 100vh; /* Faz a seção ocupar toda a altura da tela */
+    box-sizing: border-box; /* Inclui o padding no cálculo da altura total */
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #sobre .section-title {
+    position: absolute;
+    top: 180px; /* Ajuste a distância do topo conforme necessário */
+    left: 140px; /* Ajuste a distância da esquerda conforme necessário */
+    font-size: 32px; /* Ajuste o tamanho da fonte conforme necessário */
+    color: #333; /* Cor do texto, ajuste conforme necessário */
+    margin: 0;
+    text-decoration: underline; /* Adiciona o sublinhado */
+    text-decoration-color: #38acff; /* Cor do sublinhado */
+    font: bold
+  }
+  
+    #projetos {
+        background-color: #ccc;
+        padding: 80px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #projetos .section-title {
+        font-size: 32px;
+        color: #333;
+        margin-bottom: 40px;
+        text-decoration: underline;
+        text-decoration-color: #38acff;
+    }
+
+    .projects-container {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        max-width: 1200px;
+    }
+
+    .project {
+        width: 30%;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .project h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #38acff;
+    }
+
+    .project p {
+        font-size: 16px;
+        color: #333;
+    }
+  
+    #contato {
+        background-color: #f4f4f4;
+        padding: 80px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    #contato .section-title {
+        font-size: 32px;
+        color: #333;
+        margin-bottom: 20px;
+        text-decoration: underline;
+        text-decoration-color: #38acff;
+    }
+    
+    #contato p {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 30px;
+    }
+    
+    .contact-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .contact-btn {
+        display: inline-flex;
+        align-items: center;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #fff;
+        transition: background-color 0.3s ease;
+    }
+    
+    .contact-btn i {
+        margin-right: 10px;
+    }
+    
+    .contact-btn.linkedin {
+        background-color: #0077B5;
+    }
+    
+    .contact-btn.email {
+        background-color: #D44638;
+    }
+    
+    .contact-btn.instagram {
+        background-color: #E4405F;
+    }
+    
+    .contact-btn:hover {
+        opacity: 0.8;
+    }
+
+  #sobre p {
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+  
+  .language-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.language-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #38acff; /* Mesmo tom de azul do título */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    padding: 5px;
+    transition: transform 0.3s ease;
+}
+
+.language-icon:hover {
+    transform: translateY(-5px);
+}
+
+.language-icon::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 5px;
+}
+
+.python::before { background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg'); }
+.shell::before { background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg'); }
+.html::before { background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg'); }
+.css::before { background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg'); }
+.javascript::before { background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg'); }
+
+.social-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-btn i {
+    font-size: 20px;
+    color: #333;
+}
+
+.social-btn:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-3px);
+}
